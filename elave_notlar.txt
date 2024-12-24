@@ -1,0 +1,28 @@
+Əlavə Məlumatlar:
+Paket Analizi:
+
+Böyük Paketlər: Paket ölçüsü 1500 baytdan böyükdürsə, şübhəli olaraq qeyd edilir.
+Şübhəli Portlar: TCP paketlərində FTP (21), SSH (22), HTTP (80), HTTPS (443) kimi portlar üzərindən böyük trafikin aşkarlanması.
+DNS Sorğuları: UDP paketlərində Google (8.8.8.8) və Cloudflare (1.1.1.1) DNS serverlərinə qeyri-adi trafiklər monitorinq edilir.
+Loglama:
+
+Aşkarlanan şübhəli fəaliyyətlər exfiltration_alerts.log adlı faylda saxlanılır.
+Log faylı hər bir hadisəni zaman damğası ilə qeyd edir.
+Şəbəkə Filteri:
+
+sniff() funksiyası yalnız IP paketlərini izləyir. Daha spesifik filterlər üçün filter="tcp or udp" kimi qaydalar əlavə edilə bilər.
+Xətaların İdarə Edilməsi:
+
+Xətalar baş verdikdə proqram dayanmır, əvəzində log faylına yazılır.
+
+
+Tələblər:
+Python 3.x
+scapy kitabxanası:
+(pip install scapy)
+Admin hüquqları: Trafik monitorinqi üçün proqramın admin hüquqları ilə çalışması tələb olunur.
+
+İstifadə:
+Faylı saxlayın, məsələn, exfiltration_tool.py.
+Terminaldan admin hüquqları ilə çalışdırın:
+sudo python3 exfiltration_tool.py
